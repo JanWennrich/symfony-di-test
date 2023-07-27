@@ -1,5 +1,6 @@
 <?php
 
+use Jan\SymfonyDiTest\HelloWorld;
 use Jan\SymfonyDiTest\MyFooProvider;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
@@ -16,4 +17,6 @@ return function (ContainerConfigurator $container): void {
 
     $services->set(MyFooProvider::class)
         ->arg('$foo', 'foo bar');
+
+    $services->set(HelloWorld::class)->public();
 };
