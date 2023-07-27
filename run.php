@@ -13,6 +13,8 @@ $container = new ContainerBuilder();
 $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/config'));
 $loader->load('services.php');
 
+$container->compile();
+
 $helloWorld = $container->get(HelloWorld::class);
 
 $helloWorld->sayHello();
